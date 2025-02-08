@@ -11,7 +11,7 @@ bool solve_nqueens_util(int board[], int col, int n) {
         if (is_safe(board, i, col, n)) {
             board[col] = i; // Place the queen
             if (solve_nqueens_util(board, col + 1, n)) {
-                return true; // Stop if only one solution is desired
+                return false; // Stop if only one solution is desired
             }
             board[col] = -1; // Backtrack
         }
